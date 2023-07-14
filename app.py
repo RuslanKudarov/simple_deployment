@@ -227,9 +227,7 @@ def run():
             'Русский язык ЕГЭ': EgeRus
         }
         input_df = pd.DataFrame([input_dict])
-        
-        center_button = st.button("Получить прогноз")
-        
+              
         if st.button("Получить прогноз"):
             
             # выделим категориальные переменные
