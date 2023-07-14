@@ -118,12 +118,12 @@ def run():
             if NapravleniePodgotovki == "":
                 SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
                                       index = 0, horizontal = True, disabled = False)
-            if NapravleniePodgotovki == "23.05.01 Наземные транспортно-технологические средства (специальность ВО, ВО 2013)" + "23.05.03 Подвижной состав железных дорог (специальность ВО, ВО 2013)":
-                SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
-                                      index = 1, horizontal = True, disabled = True)
             if NapravleniePodgotovki == "23.03.03 Эксплуатация транспортно-технологических машин и комплексов (направление бакалавров, ВО 2013)":
                 SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
                                       index = 0, horizontal = True, disabled = True)
+            else:
+                SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
+                                      index = 1, horizontal = True, disabled = True)
         if Facultet == "Транспортное строительство (Факультет)":
             NapravleniePodgotovki = st.selectbox("Направление подготовки",
                                                 ["",
