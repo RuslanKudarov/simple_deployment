@@ -117,8 +117,10 @@ def run():
             EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
                                value = 36, step = 1)
         else:
+            EgeMath = 36
             EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
-                                value = 36, step = 1, disabled = True)
+                                value = 36, step = 1, disabled = True,
+                                help = "для ввода баллов укажите, что сдавали ЕГЭ")
             EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
                                value = 36, step = 1, disabled = True,
                                help = "для ввода баллов укажите, что сдавали ЕГЭ")
