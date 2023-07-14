@@ -81,17 +81,17 @@ def run():
                                     "Среднее общее образование, получено за два года до поступления",
                                     "Среднее общее образование, получено за три года до поступления",
                                     "Среднее профессиональное образование, получено в год поступления"
-                                index = 0)
+                                    index = 0)
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
-                              index = 0)
+                             index = 0)
         SrBallDokObr = st.number_input('Ср. балл док-та об образовании',
                                        min_value = 3, max_value = 5,
                                        value = 3,
                                        help = 'введите от 3 до 5 с точностью до 2-х знаков после запятой')
         EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
-                          value = 36, step = 1)
+                            value = 36, step = 1)
         EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
-                          value = 36, step = 1)
+                           value = 36, step = 1)
         
         input_dict = {
             'Пол': Gender,
