@@ -59,7 +59,7 @@ def run():
                                     index = 1, disabled = True, horizontal = True)
         if TipDogovora == "платник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 1, disabled = True, horizontal = True, horizontal = True)
+                                 index = 1, disabled = True, horizontal = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
                                     index = 0, disabled = True, horizontal = True)
 
