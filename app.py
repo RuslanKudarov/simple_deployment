@@ -228,7 +228,7 @@ def run():
         }
         input_df = pd.DataFrame([input_dict])
         
-        if st.button("Спрогнозировать вероятность неуспеваемости"):
+        if st.button("Получить прогноз"):
             
             # выделим категориальные переменные
             categoric_columns = [c for c in input_df.columns if input_df[c].dtype.name == 'object']
@@ -532,7 +532,7 @@ def run():
             prob_id.insert(loc = 2, column = 'Вероятность неуспеваемости', value = prob)
             
             # вывод вероятностей на веб-странице
-            st.success("Вероятности просрочки для загруженных данных:")
+            st.success("Вероятности неуспеваемости студентов по загруженным данным:")
             st.write(prob_id)
             
 if __name__ == '__main__':
