@@ -373,7 +373,8 @@ def run():
             preprocessing(input_df, GodNabora(2023), PercentRestOfWorld(2), OutOfAnalysis(50))
             # вычисляем вероятности для новых данных
             output = pipe.predict_proba(input_df)[0, 1]
-            st.success("Вероятность неуспеваемости: {:.0f}%".format(output * 100))
+#            st.success("Вероятность неуспеваемости: {:.0f}%".format(output * 100))
+            st.progress(value = output * 100)
         
     if add_selectbox == "Batch":
         
