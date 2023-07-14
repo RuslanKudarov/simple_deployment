@@ -227,6 +227,14 @@ def run():
             'Русский язык ЕГЭ': EgeRus
         }
         input_df = pd.DataFrame([input_dict])
+
+        st.markdown("""
+        <style>
+        .stProgress .st-bo {
+            background-color: red;
+        }
+        </style>
+        """, unsafe_allow_html=True)
               
         if st.button("Получить прогноз"):
             
