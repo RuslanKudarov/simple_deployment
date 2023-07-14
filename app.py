@@ -228,7 +228,7 @@ def run():
         }
         input_df = pd.DataFrame([input_dict])
         
-        if st.button("Получить прогноз"):
+        #if st.button("Получить прогноз"):
             
             # выделим категориальные переменные
             categoric_columns = [c for c in input_df.columns if input_df[c].dtype.name == 'object']
