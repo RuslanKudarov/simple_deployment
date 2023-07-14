@@ -289,7 +289,7 @@ def run():
             # вычисляем вероятности для новых данных
             output = pipe.predict_proba(input_df)[:, 1]
             output = str(output)
-            st.success("Вероятность неуспеваемости: {.2f}%".format(output * 100))
+            st.success("Вероятность неуспеваемости: {:.2f}%".format(output * 100))
         
     if add_selectbox == "Batch":
         
