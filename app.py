@@ -375,6 +375,11 @@ def run():
             output = pipe.predict_proba(input_df)[0, 1]
             #st.success("Вероятность неуспеваемости: {:.0f}%".format(output * 100))
 
+            SUB_CLASS_MAP = {
+                "main": ".st-bo",
+                "column": ".st-cs"
+            }
+
             st.markdown(f"""
             <style>
             .stProgress {SUB_CLASS_MAP[the_key_goes_here]} {{
