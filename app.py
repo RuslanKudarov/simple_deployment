@@ -34,7 +34,7 @@ def run():
         Gender = st.radio("Пол студента", ["М", "Ж"],
                           index = 0, horizontal = True)
         Obshezitie = st.radio("Нуждается в общежитии", ["", "нет", "да"],
-                              index = 0, horizontal = True)
+                              index = 0)
         Grazdanstvo = st.selectbox("Гражданство", ["Россия", "Узбекистан",
                                                    "Казахстан", "Монголия", 
                                                    "Другие страны"],
@@ -110,7 +110,7 @@ def run():
                                            value = 3.00,
                                            help = "введите средний балла с точностью до 2-х знаков после запятой")
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
-                             index = 0, horizontal = True)
+                             index = 0)
         if SdavalEge == "да":
             EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
                                 value = 36, step = 1)
