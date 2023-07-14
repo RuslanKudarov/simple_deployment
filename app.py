@@ -27,7 +27,8 @@ def run():
                   "метода логистической регрессии.")
     
     st.sidebar.info(sidebar_ttl)
-    st.title("Прогнозирование неуспеваемости".center(30))
+    tit = "Прогнозирование неуспеваемости"
+    st.title(tit.center(30))
     
     if add_selectbox == "Online":
         
