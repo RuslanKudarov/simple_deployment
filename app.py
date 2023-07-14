@@ -98,16 +98,30 @@ def run():
                                     "Среднее общее образование, получено за три года до поступления",
                                     "Среднее профессиональное образование, получено в год поступления"],
                                     index = 0)
-        SrBallDokObr = st.number_input('Средний балл документа о довузовском образовании',
-                                       min_value = 3.00, max_value = 5.00,
-                                       value = 3.00,
-                                       help = "с точностью до 2-х знаков после запятой")
+        if Obrazovanie == "":
+            SrBallDokObr = st.number_input('Средний балл документа о довузовском образовании',
+                                           min_value = 3.00, max_value = 5.00,
+                                           value = 3.00,
+                                           help = "для ввода среднего балла укажите полученное довузовское образование",
+                                          disable = True)
+        else:
+            SrBallDokObr = st.number_input('Средний балл документа о довузовском образовании',
+                                           min_value = 3.00, max_value = 5.00,
+                                           value = 3.00,
+                                           help = "введите средний балла с точностью до 2-х знаков после запятой",
+                                          disable = True)
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
                              index = 0)
-        EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
-                            value = 36, step = 1)
-        EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
-                           value = 36, step = 1)
+        if SdavalEge = "да":
+            EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
+                                value = 36, step = 1)
+            EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
+                               value = 36, step = 1)
+        else:
+            EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
+                                value = 36, step = 1, disable = True)
+            EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
+                               value = 36, step = 1, disable = True)
         
         input_dict = {
             'Пол': Gender,
