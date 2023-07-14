@@ -379,7 +379,7 @@ def run():
                 """
                 <style>
                 .stProgress > div > div > div > div {
-                background-color: green;
+                background-color: red;
                 }
                 </style>""",
                 unsafe_allow_html=True,
