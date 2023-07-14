@@ -34,34 +34,34 @@ def run():
         Gender = st.radio("Пол студента", ["М", "Ж"],
                           index = 0, horizontal = True)
         Obshezitie = st.radio("Нуждается в общежитии", ["", "нет", "да"],
-                              index = 0)
+                              index = 0, horizontal = True)
         Grazdanstvo = st.selectbox("Гражданство", ["Россия", "Узбекистан",
                                                    "Казахстан", "Монголия", 
                                                    "Другие страны"],
                                    index = 0)
         if Grazdanstvo == "Россия":
             Inostranec = st.radio("Иностранец", ["нет", "да"],
-                              index = 0, disabled = True)
+                              index = 0, disabled = True, horizontal = True)
         else:
             Inostranec = st.radio("Иностранец", ["нет", "да"],
-                              index = 1, disabled = True)
+                              index = 1, disabled = True, horizontal = True)
         TipDogovora = st.radio("Тип договора", ["бюджетник", "целевик", "платник"],
-                               index = 0)
+                               index = 0, horizontal = True)
         if TipDogovora == "бюджетник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 0, disabled = True)
+                                 index = 0, disabled = True, horizontal = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                    index = 0, disabled = True)
+                                    index = 0, disabled = True, horizontal = True)
         if TipDogovora == "целевик":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 0, disabled = True)
+                                 index = 0, disabled = True, horizontal = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                    index = 1, disabled = True)
+                                    index = 1, disabled = True, horizontal = True)
         if TipDogovora == "платник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 1, disabled = True)
+                                 index = 1, disabled = True, horizontal = True, horizontal = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                    index = 0, disabled = True)
+                                    index = 0, disabled = True, horizontal = True)
 
         Facultet = st.selectbox("Факультет", ["Транспортное строительство (Факультет)",
                                               "Транспортные и энергетические системы (Факультет)",
@@ -89,7 +89,7 @@ def run():
                                               "27.03.01 Стандартизация и метрология (направление бакалавров, ВО 2013)"],
                                              index = 0)
         SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["5 лет", "4 года", "5,5 лет", "6 лет"],
-                                  index = 0)
+                                  index = 0, horizontal = True)
         Obrazovanie = st.selectbox("Полученное довузовское образование",
                                    ["",
                                     "Среднее общее образование, получено в год поступления",
@@ -110,7 +110,7 @@ def run():
                                            value = 3.00,
                                            help = "введите средний балла с точностью до 2-х знаков после запятой")
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
-                             index = 0)
+                             index = 0, horizontal = True)
         if SdavalEge == "да":
             EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
                                 value = 36, step = 1)
