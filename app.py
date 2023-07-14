@@ -84,7 +84,7 @@ def run():
                                       index = 0, horizontal = True, disabled = False)
             if NapravleniePodgotovki == "10.05.03 Информационная безопасность автоматизированных систем (специальность ВО, ВО 2013)":
                 SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
-                                      index = 3, horizontal = True, disabled = True)
+                                      index = 2, horizontal = True, disabled = True)
             if NapravleniePodgotovki == "23.05.05 Системы обеспечения движения поездов (специальность ВО, ВО 2013)":
                 SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
                                       index = 1, horizontal = True, disabled = True) 
@@ -107,7 +107,7 @@ def run():
                                       index = 0, horizontal = True, disabled = False)
             if NapravleniePodgotovki == "08.05.01 Строительство уникальных зданий и сооружений (специальность ВО, ВО 2013)":
                 SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
-                                      index = 2, horizontal = True, disabled = True)      
+                                      index = 3, horizontal = True, disabled = True)      
             if NapravleniePodgotovki == "08.03.01 Строительство (направление бакалавров, ВО 2013)":
                 SrokObucheniya = st.radio("Срок обучения по направлению подготовки", ["4 года", "5 лет", "5,5 лет", "6 лет"],
                                       index = 0, horizontal = True, disabled = True)
