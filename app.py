@@ -85,8 +85,8 @@ def run():
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
                              index = 0)
         SrBallDokObr = st.number_input('Ср. балл док-та об образовании',
-                                       min_value = 3, max_value = 5,
-                                       value = 3, step = 0.01,
+                                       min_value = 3.00, max_value = 5.00,
+                                       value = 3.00,
                                        help = "с точностью до 2-х знаков после запятой")
         EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
                             value = 36, step = 1)
