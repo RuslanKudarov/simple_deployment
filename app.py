@@ -375,15 +375,15 @@ def run():
             output = pipe.predict_proba(input_df)[0, 1]
             #st.success("Вероятность неуспеваемости: {:.0f}%".format(output * 100))
     
-    st.markdown(
-        """
-        <style>
-        .stProgress > div > div > div > div {
-        background-color: green;
-        }
-        </style>""",
-        unsafe_allow_html=True,
-    )
+            st.markdown(
+                """
+                <style>
+                .stProgress > div > div > div > div {
+                background-color: green;
+                }
+                </style>""",
+                unsafe_allow_html=True,
+            )
         
             st.progress(value = output, text = "Вероятность неуспеваемости: {:.0f}%".format(output * 100))
         
