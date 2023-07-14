@@ -41,27 +41,27 @@ def run():
                                    index = 0)
         if Grazdanstvo == "Россия":
             Inostranec = st.radio("Иностранец", ["нет", "да"],
-                              index = 0, disabled = True, horizontal = True)
+                              index = 0, disabled = True)
         else:
             Inostranec = st.radio("Иностранец", ["нет", "да"],
-                              index = 1, disabled = True, horizontal = True)
+                              index = 1, disabled = True)
         TipDogovora = st.radio("Тип договора", ["бюджетник", "целевик", "платник"],
-                               index = 0, horizontal = True)
+                               index = 0)
         if TipDogovora == "бюджетник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 0, disabled = True, horizontal = True)
+                                 index = 0, disabled = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                    index = 0, disabled = True, horizontal = True)
+                                    index = 0, disabled = True)
         if TipDogovora == "целевик":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 0, disabled = True, horizontal = True)
+                                 index = 0, disabled = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                    index = 1, disabled = True, horizontal = True)
+                                    index = 1, disabled = True)
         if TipDogovora == "платник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
-                                 index = 1, disabled = True, horizontal = True)
+                                 index = 1, disabled = True)
             CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                    index = 0, disabled = True, horizontal = True)
+                                    index = 0, disabled = True)
 
         Facultet = st.selectbox("Факультет", ["Транспортное строительство (Факультет)",
                                               "Транспортные и энергетические системы (Факультет)",
