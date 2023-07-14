@@ -39,8 +39,12 @@ def run():
                                                    "Казахстан", "Монголия", 
                                                    "Другие страны"],
                                    index = 0)
-        Inostranec = st.radio("Иностранец", ["нет", "да"],
+        if Grazdanstvo == "Россия":
+            Inostranec = st.radio("Иностранец", ["нет", "да"],
                               index = 0, disabled = True)
+        else:
+            Inostranec = st.radio("Иностранец", ["нет", "да"],
+                              index = 1, disabled = True)
         TipDogovora = st.radio("Тип договора", ["бюджетник", "целевик", "платник"],
                                index = 0)
         VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
