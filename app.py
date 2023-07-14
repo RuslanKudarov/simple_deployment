@@ -50,14 +50,19 @@ def run():
         if TipDogovora == "бюджетник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
                                  index = 0, disabled = True)
+            CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
+                                    index = 0, disabled = True)
         if TipDogovora == "целевик":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
                                  index = 0, disabled = True)
+            CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
+                                    index = 1, disabled = True)
         if TipDogovora == "платник":
             VidZatrat = st.radio("Вид затрат", ["бюджет", "по договору"],
                                  index = 1, disabled = True)
-        CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
-                                index = 0)
+            CelevoiPriem = st.radio("Целевой прием", ["нет", "да"],
+                                    index = 0, disabled = True)
+
         Facultet = st.selectbox("Факультет", ["Транспортное строительство (Факультет)",
                                               "Транспортные и энергетические системы (Факультет)",
                                               "Автоматизация и интеллектуальные технологии (Факультет)",
