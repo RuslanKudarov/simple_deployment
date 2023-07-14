@@ -112,7 +112,7 @@ def run():
                                           disable = True)
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
                              index = 0)
-        if SdavalEge = "да":
+        if SdavalEge == "да":
             EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
                                 value = 36, step = 1)
             EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
