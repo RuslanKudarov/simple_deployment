@@ -32,7 +32,7 @@ def run():
     if add_selectbox == "Online":
         
         Gender = st.radio("Пол студента", ["М", "Ж"],
-                          index = 0, horizontal = True)
+                          index = 0)
         Obshezitie = st.radio("Нуждается в общежитии", ["", "нет", "да"],
                               index = 0)
         Grazdanstvo = st.selectbox("Гражданство", ["Россия", "Узбекистан",
