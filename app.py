@@ -103,13 +103,13 @@ def run():
                                            min_value = 3.00, max_value = 5.00,
                                            value = 3.00,
                                            help = "для ввода среднего балла укажите полученное довузовское образование",
-                                          disable = True)
+                                           disabled = True)
         else:
             SrBallDokObr = st.number_input('Средний балл документа о довузовском образовании',
                                            min_value = 3.00, max_value = 5.00,
                                            value = 3.00,
                                            help = "введите средний балла с точностью до 2-х знаков после запятой",
-                                          disable = True)
+                                          disabled = True)
         SdavalEge = st.radio("Сдавал ЕГЭ", ["", "нет", "да"],
                              index = 0)
         if SdavalEge == "да":
@@ -119,9 +119,9 @@ def run():
                                value = 36, step = 1)
         else:
             EgeMath = st.slider('Математика ЕГЭ', min_value = 36, max_value = 100,
-                                value = 36, step = 1, disable = True)
+                                value = 36, step = 1, disabled = True)
             EgeRus = st.slider('Русский язык ЕГЭ', min_value = 36, max_value = 100,
-                               value = 36, step = 1, disable = True)
+                               value = 36, step = 1, disabled = True)
         
         input_dict = {
             'Пол': Gender,
