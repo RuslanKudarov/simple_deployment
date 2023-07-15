@@ -542,7 +542,7 @@ def run():
             prob = pipe.predict_proba(newdata)[:, 1]
             probproc = np.round(prob, 2) * 100
             prob_id = newdata[['ФИО', 'Группа']]
-            prob_id.insert(loc = 2, column = 'Вероятность неуспеваемости, %', value = prob)
+            prob_id.insert(loc = 2, column = 'Вероятность неуспеваемости, %', value = probproc)
             
             # вывод вероятностей на веб-странице
             st.success("Вероятности неуспеваемости студентов по загруженным данным:")
