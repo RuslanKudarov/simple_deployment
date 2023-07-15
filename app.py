@@ -548,8 +548,5 @@ def run():
             st.success("Вероятности неуспеваемости студентов по загруженным данным:")
             st.write(prob_id)
 
-            for c in probproc:
-                st.progress(value = probproc[c])
-
 if __name__ == '__main__':
     run()
