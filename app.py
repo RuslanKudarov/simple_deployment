@@ -548,7 +548,7 @@ def run():
             st.success("Вероятности неуспеваемости студентов по загруженным данным:")
             st.write(prob_id)
             
-            st.progress(value = prob_id, text = "Вероятность неуспеваемости: {:.0f}%".format(prob_id))
+            st.progress(value = prob_id, text = "Вероятность неуспеваемости: {:.0f}%".format(prob))
             
 if __name__ == '__main__':
     run()
