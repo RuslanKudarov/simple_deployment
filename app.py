@@ -384,6 +384,7 @@ def run():
                     </style>""",
                     unsafe_allow_html=True,
                 )
+                st.progress(value = output, text = "Высокая вероятность неуспеваемости: {:.0f}%".format(output * 100))
             if (.25 <= output < .4):
                 st.markdown(
                     """
@@ -394,6 +395,7 @@ def run():
                     </style>""",
                     unsafe_allow_html=True,
                 )
+                st.progress(value = output, text = "Средняя вероятность неуспеваемости: {:.0f}%".format(output * 100))
             if (output < .25):
                 st.markdown(
                     """
@@ -404,8 +406,7 @@ def run():
                     </style>""",
                     unsafe_allow_html=True,
                 )
-        
-            st.progress(value = output, text = "Вероятность неуспеваемости: {:.0f}%".format(output * 100))
+                st.progress(value = output, text = "Низкая вероятность неуспеваемости: {:.0f}%".format(output * 100))
         
     if add_selectbox == "Batch":
         
