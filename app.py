@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+import openpyxl
 
 # импортируем пакет
 import dill
@@ -581,7 +582,6 @@ def run():
         if file_upload is not None:
             df_abit = pd.DataFrame()
             data_abit = pd.read_excel(file_upload,
-                                      engine='openpyxl',
                                       sheet_name = "Абитуриенты",
                                       header = 9)
             df_abit = pd.concat([df_abit, data_abit],
