@@ -595,6 +595,13 @@ def run():
                                        type = ['xls' or 'xlsx'],
                                        accept_multiple_files = False,
                                        help = 'принимаются файлы с расширением xls или xlsx')
+
+        file_stud_upload_ttl = ("Загрузите Excel-файл с данными студентов\n"
+                          "для построения модели:")
+        file_stud_upload = st.file_uploader(file_stud_upload_ttl,
+                                       type = ['xls' or 'xlsx'],
+                                       accept_multiple_files = False,
+                                       help = 'принимаются файлы с расширением xls или xlsx')
         
         if file_stud_upload is not None:
             df_stud = pd.DataFrame()
