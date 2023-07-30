@@ -589,13 +589,6 @@ def run():
             st.success("Данные абитуриентов:")
             st.write(df_abit)
 
-        file_abit_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
-                          "для построения модели:")
-        file_abit_upload = st.file_uploader(file_abit_upload_ttl,
-                                       type = ['xls' or 'xlsx'],
-                                       accept_multiple_files = False,
-                                       help = 'принимаются файлы с расширением xls или xlsx')
-
         file_stud_upload_ttl = ("Загрузите Excel-файл с данными студентов\n"
                           "для построения модели:")
         file_stud_upload = st.file_uploader(file_stud_upload_ttl,
@@ -606,8 +599,8 @@ def run():
         if file_stud_upload is not None:
             df_stud = pd.DataFrame()
             data_stud = pd.read_excel(file_stud_upload,
-                                      sheet_name = "Абитуриенты",
-                                      header = 9)
+                                      sheet_name = "Обучающиеся",
+                                      header = 3)
             df_stud = pd.concat([df_stud, data_stud],
                                 ignore_index = True)
             # вывод данных на веб-странице
