@@ -571,12 +571,12 @@ def run():
 
     if add_selectbox == "Загрузить данные":
         
-        file_upload_ttl = ("Загрузите excel-файл с новыми данными\n"
+        file_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
                           "для построения модели:")
         file_upload = st.file_uploader(file_upload_ttl,
                                        type = ['xls' or 'xlsx'],
                                        accept_multiple_files = False,
-                                       help = 'Перетащите в эту область файл xls или xlsx с данными абитуриентов из ЕАИСУ')
+                                       help = 'принимаются файлы с расширением xls или xlsx')
         
         if file_upload is not None:
             df_abit = pd.DataFrame()
@@ -585,6 +585,9 @@ def run():
                                       header = 9)
             df_abit = pd.concat([df_abit, data_abit],
                                 ignore_index = True)
+            # вывод данных на веб-странице
+            st.success("Данные абитуриентов:")
+            st.write(df_abit)
 
 if __name__ == '__main__':
     run()
