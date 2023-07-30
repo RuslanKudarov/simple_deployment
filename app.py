@@ -6,6 +6,7 @@ import streamlit as st
 # импортируем пакет
 import dill
 
+!pip install xlrd
 
 # загрузим ранее сохраненный конвейер
 with open('pipeline_for_deployment.pkl', 'rb') as f:
