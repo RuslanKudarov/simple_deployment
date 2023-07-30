@@ -21,7 +21,7 @@ def run():
     question = ("В каком режиме вы хотели бы сделать прогноз, Онлайн\n"
                "(Online) или загрузкой файла данных(Batch)?")
     
-    add_selectbox = st.sidebar.selectbox(question, ("Online", "Batch"))
+    add_selectbox = st.sidebar.selectbox(question, ("Online", "Batch", "Загрузить данные"))
     
     sidebar_ttl = ("Прогнозирование неуспеваемости с использованием\n"
                   "метода логистической регрессии.")
