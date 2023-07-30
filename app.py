@@ -571,16 +571,16 @@ def run():
 
     if add_selectbox == "Загрузить данные":
         
-        file_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
+        file_abit_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
                           "для построения модели:")
-        file_upload = st.file_uploader(file_upload_ttl,
+        file_abit_upload = st.file_uploader(file_abit_upload_ttl,
                                        type = ['xls' or 'xlsx'],
                                        accept_multiple_files = False,
                                        help = 'принимаются файлы с расширением xls или xlsx')
         
-        if file_upload is not None:
+        if file_abit_upload is not None:
             df_abit = pd.DataFrame()
-            data_abit = pd.read_excel(file_upload,
+            data_abit = pd.read_excel(file_abit_upload,
                                       sheet_name = "Абитуриенты",
                                       header = 9)
             df_abit = pd.concat([df_abit, data_abit],
@@ -588,6 +588,24 @@ def run():
             # вывод данных на веб-странице
             st.success("Данные абитуриентов:")
             st.write(df_abit)
+
+        file_abit_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
+                          "для построения модели:")
+        file_abit_upload = st.file_uploader(file_abit_upload_ttl,
+                                       type = ['xls' or 'xlsx'],
+                                       accept_multiple_files = False,
+                                       help = 'принимаются файлы с расширением xls или xlsx')
+        
+        if file_stud_upload is not None:
+            df_stud = pd.DataFrame()
+            data_stud = pd.read_excel(file_stud_upload,
+                                      sheet_name = "Абитуриенты",
+                                      header = 9)
+            df_stud = pd.concat([df_stud, data_stud],
+                                ignore_index = True)
+            # вывод данных на веб-странице
+            st.success("Данные абитуриентов:")
+            st.write(df_stud)
 
 if __name__ == '__main__':
     run()
