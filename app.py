@@ -46,7 +46,7 @@ def run():
             df_abit = pd.concat([df_abit, data_abit],
                                 ignore_index = True)           
             # вывод данных на веб-странице
-            check_abit = st.checkbox('Посмотреть данные')
+            check_abit = st.checkbox('Посмотреть данные абитуриентов')
             if check_abit:
                 st.success("Данные абитуриентов:")
                 st.write(df_abit)
