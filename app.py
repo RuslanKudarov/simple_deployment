@@ -21,13 +21,53 @@ def run():
     question = ("В каком режиме вы хотели бы сделать прогноз, Онлайн\n"
                "(Online) или загрузкой файла данных(Batch)?")
     
-    add_selectbox = st.sidebar.selectbox(question, ("Online", "Batch", "Загрузить данные"))
+    add_selectbox = st.sidebar.selectbox(question, ("Загрузить данные", "Online", "Batch"))
     
     sidebar_ttl = ("Прогнозирование неуспеваемости с использованием\n"
                   "метода логистической регрессии.")
     
     st.sidebar.info(sidebar_ttl)
     st.title("Прогнозирование неуспеваемости")
+
+        if add_selectbox == "Загрузить данные":
+        
+        file_abit_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
+                          "для построения модели:")
+        file_abit_upload = st.file_uploader(file_abit_upload_ttl,
+                                       type = ['xls' or 'xlsx'],
+                                       accept_multiple_files = False,
+                                       help = 'принимаются файлы с расширением xls или xlsx')
+        
+        if file_abit_upload is not None:
+            df_abit = pd.DataFrame()
+            data_abit = pd.read_excel(file_abit_upload,
+                                      sheet_name = "Абитуриенты",
+                                      header = 9)
+            df_abit = pd.concat([df_abit, data_abit],
+                                ignore_index = True)           
+            # вывод данных на веб-странице
+            check_abit = st.checkbox('Посмотреть данные')
+            if check_abit:
+                st.success("Данные абитуриентов:")
+                st.write(df_abit)
+
+        file_stud_upload_ttl = ("Загрузите Excel-файл с данными студентов\n"
+                          "для построения модели:")
+        file_stud_upload = st.file_uploader(file_stud_upload_ttl,
+                                       type = ['xls' or 'xlsx'],
+                                       accept_multiple_files = False,
+                                       help = 'принимаются файлы с расширением xls или xlsx')
+        
+        if file_stud_upload is not None:
+            df_stud = pd.DataFrame()
+            data_stud = pd.read_excel(file_stud_upload,
+                                      sheet_name = "Обучающиеся",
+                                      header = 3)
+            df_stud = pd.concat([df_stud, data_stud],
+                                ignore_index = True)
+            # вывод данных на веб-странице
+            st.success("Данные абитуриентов:")
+            st.write(df_stud)
     
     if add_selectbox == "Online":
         
@@ -568,46 +608,6 @@ def run():
             # вывод вероятностей на веб-странице
             st.success("Вероятности неуспеваемости студентов по загруженным данным:")
             st.write(prob_id)
-
-    if add_selectbox == "Загрузить данные":
-        
-        file_abit_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
-                          "для построения модели:")
-        file_abit_upload = st.file_uploader(file_abit_upload_ttl,
-                                       type = ['xls' or 'xlsx'],
-                                       accept_multiple_files = False,
-                                       help = 'принимаются файлы с расширением xls или xlsx')
-        
-        if file_abit_upload is not None:
-            df_abit = pd.DataFrame()
-            data_abit = pd.read_excel(file_abit_upload,
-                                      sheet_name = "Абитуриенты",
-                                      header = 9)
-            df_abit = pd.concat([df_abit, data_abit],
-                                ignore_index = True)           
-            # вывод данных на веб-странице
-            check_abit = st.checkbox('Посмотреть данные')
-            if check_abit:
-                st.success("Данные абитуриентов:")
-                st.write(df_abit)
-
-        file_stud_upload_ttl = ("Загрузите Excel-файл с данными студентов\n"
-                          "для построения модели:")
-        file_stud_upload = st.file_uploader(file_stud_upload_ttl,
-                                       type = ['xls' or 'xlsx'],
-                                       accept_multiple_files = False,
-                                       help = 'принимаются файлы с расширением xls или xlsx')
-        
-        if file_stud_upload is not None:
-            df_stud = pd.DataFrame()
-            data_stud = pd.read_excel(file_stud_upload,
-                                      sheet_name = "Обучающиеся",
-                                      header = 3)
-            df_stud = pd.concat([df_stud, data_stud],
-                                ignore_index = True)
-            # вывод данных на веб-странице
-            st.success("Данные абитуриентов:")
-            st.write(df_stud)
 
 if __name__ == '__main__':
     run()
