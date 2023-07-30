@@ -571,14 +571,20 @@ def run():
 
     if add_selectbox == "Загрузить данные":
         
-        file_upload_ttl = ("Загрузите csv-файл с новыми данными\n"
-                          "для вычисления вероятностей:")
-        file_upload = st.file_uploader(file_upload_ttl, type = ['csv'])
+        file_upload_ttl = ("Загрузите excel-файл с новыми данными\n"
+                          "для построения модели:")
+        file_upload = st.file_uploader(file_upload_ttl,
+                                       type = ['xls' or 'xlsx'],
+                                       accept_multiple_files = True,
+                                       help = 'Перетащите в эту область файл xls или xlsx с данными абитуриентов из ЕАИСУ')
         
         if file_upload is not None:
-            newdata = pd.read_csv(file_upload, sep = ';')
-            
-
+            df_abit = pd.DataFrame()
+            data_abit = pd.read_excel(file_upload,
+                                      sheet_name = "Абитуриенты",
+                                      header = 9)
+            df_abit = pd.concat([df_abit, data_abit],
+                                ignore_index = True)
 
 if __name__ == '__main__':
     run()
