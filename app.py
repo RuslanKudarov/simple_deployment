@@ -575,7 +575,7 @@ def run():
                           "для построения модели:")
         file_upload = st.file_uploader(file_upload_ttl,
                                        type = ['xls' or 'xlsx'],
-                                       accept_multiple_files = True,
+                                       accept_multiple_files = False,
                                        help = 'Перетащите в эту область файл xls или xlsx с данными абитуриентов из ЕАИСУ')
         
         if file_upload is not None:
