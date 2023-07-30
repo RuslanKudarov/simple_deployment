@@ -584,10 +584,12 @@ def run():
                                       sheet_name = "Абитуриенты",
                                       header = 9)
             df_abit = pd.concat([df_abit, data_abit],
-                                ignore_index = True)
+                                ignore_index = True)           
             # вывод данных на веб-странице
-            st.success("Данные абитуриентов:")
-            st.write(df_abit)
+            check_abit = st.checkbox('Посмотреть данные')
+            if check_abit:
+                st.success("Данные абитуриентов:")
+                st.write(df_abit)
 
         file_stud_upload_ttl = ("Загрузите Excel-файл с данными студентов\n"
                           "для построения модели:")
