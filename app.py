@@ -29,7 +29,7 @@ def run():
     st.sidebar.info(sidebar_ttl)
     st.title("Прогнозирование неуспеваемости")
 
-        if add_selectbox == "Загрузить данные":
+    if add_selectbox == "Загрузить данные":
         
         file_abit_upload_ttl = ("Загрузите Excel-файл с данными абитуриентов\n"
                           "для построения модели:")
