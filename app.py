@@ -569,5 +569,16 @@ def run():
             st.success("Вероятности неуспеваемости студентов по загруженным данным:")
             st.write(prob_id)
 
+    if add_selectbox == "Загрузить данные":
+        
+        file_upload_ttl = ("Загрузите csv-файл с новыми данными\n"
+                          "для вычисления вероятностей:")
+        file_upload = st.file_uploader(file_upload_ttl, type = ['csv'])
+        
+        if file_upload is not None:
+            newdata = pd.read_csv(file_upload, sep = ';')
+            
+
+
 if __name__ == '__main__':
     run()
